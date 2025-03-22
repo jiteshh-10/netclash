@@ -52,40 +52,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign Up')),
+      appBar: AppBar(title: const Text('Sign Up')),
       body: Padding(
-        padding: EdgeInsets.all(AppSizes.padding),
+        padding: const EdgeInsets.all(AppSizes.padding),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
               TextFormField(
                 controller: _displayNameController,
-                decoration: InputDecoration(labelText: 'Display Name'),
+                decoration: const InputDecoration(labelText: 'Display Name'),
                 validator: displayNameValidator,
               ),
-              SizedBox(height: AppSizes.padding),
+              const SizedBox(height: AppSizes.padding),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 validator: emailValidator,
               ),
-              SizedBox(height: AppSizes.padding),
+              const SizedBox(height: AppSizes.padding),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 validator: passwordValidator,
               ),
               if (_errorMessage != null)
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     _errorMessage!,
-                    style: TextStyle(color: AppColors.errorColor),
+                    style: const TextStyle(color: AppColors.errorColor),
                   ),
                 ),
-              SizedBox(height: AppSizes.padding),
+              const SizedBox(height: AppSizes.padding),
               CustomButton(
                 text: 'Sign Up',
                 onPressed: _signUp,

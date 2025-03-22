@@ -5,6 +5,8 @@ import 'package:netclash/screens/admin/manage_tournament_screen.dart';
 class AdminDashboard extends StatelessWidget {
   final AuthService _authService = AuthService();
 
+  AdminDashboard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -35,7 +37,7 @@ class AdminDashboard extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ManageTournamentScreen()),
+                      MaterialPageRoute(builder: (context) => const ManageTournamentScreen()),
                     );
                   },
                   child: const Text('Manage Tournaments'),

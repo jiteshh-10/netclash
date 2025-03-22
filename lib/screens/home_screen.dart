@@ -11,6 +11,8 @@ import 'package:netclash/utils/constants.dart';
 class HomeScreen extends StatelessWidget {
   final AuthService _authService = AuthService();
 
+  HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -20,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           return const Center(child: SpinKitFadingCircle(color: AppColors.primaryColor));
         }
         if (!snapshot.hasData || snapshot.data == null) {
-          return LoginScreen();
+          return const LoginScreen();
         }
 
         final user = snapshot.data!;
@@ -57,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()),
+                      MaterialPageRoute(builder: (context) => const ProfileScreen()),
                     );
                   },
                 ),

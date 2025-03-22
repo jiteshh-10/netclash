@@ -10,6 +10,7 @@ class StorageService {
       await ref.putFile(image);
       return await ref.getDownloadURL();
     } catch (e) {
+      // ignore: avoid_print
       print(e);
       return null;
     }

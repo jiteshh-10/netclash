@@ -6,7 +6,7 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isLoading;
 
-  const CustomButton({
+  const CustomButton({super.key, 
     required this.text,
     required this.onPressed,
     this.isLoading = false,
@@ -26,10 +26,10 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: isLoading
-            ? CircularProgressIndicator(color: Colors.white)
+            ? const CircularProgressIndicator(color: Colors.white)
             : Text(
                 text,
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
       ),
     );
